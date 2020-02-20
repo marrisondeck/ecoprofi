@@ -1,0 +1,443 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <title>Рассчет стоимости потолка - Экопрофи -  натяжные потолки</title>
+      <meta name="robots" content="index, follow">
+    <meta name="description" content="Данный калькулятор рассчитывает ориентировочную стоимость. Для рассчета полной стои�" />
+<meta name="generator" content="GetSimple" />
+<link rel="canonical" href="rasschet-stoimosti-potolka.htm" />
+    <meta http-equiv="content-Language" content="ru" />
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/typography.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <!--[if lte IE 7]><link rel="stylesheet" href="./css/ie.css" type="text/css"  media="all" /><![endif]-->
+
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=EmulateIE8" />
+    <meta http-equiv="imagetoolbar" content="false" />
+	<link rel="stylesheet" href="css/personal.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="popup.css" type="text/css" media="screen" />
+	
+<script type="text/javascript" src="js/jquery.core.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.pngfix.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.swfobject.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js1/jquery.quickflip.js"></script>
+	<script type="text/javascript" src="js1/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="js1/popup.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			PopUp($('#obj'), $('#trigg'));
+		});
+	</script>
+    <script type="text/javascript" src="tabber.js"></script>
+<link rel="stylesheet" href="example.css" TYPE="text/css" MEDIA="screen">
+<link rel="stylesheet" href="example-print.css" TYPE="text/css" MEDIA="print">
+
+<script type="text/javascript">
+
+/* Optional: Temporarily hide the "tabber" class so it does not "flash"
+   on the page as plain HTML. After tabber runs, the class is changed
+   to "tabberlive" and it will appear. */
+
+document.write('<style type="text/css">.tabber{display:none;}<\/style>');
+</script>
+<script type="text/javascript">
+
+       /*
+        * Функция подсчета стоимости услуг на создания дизайна сайта
+        */
+		
+	var text1 = 0;
+	var radio1 = 0;//переменная которой присваивается стоимость полотна за 1кв.м.
+	//Переменные для площадь потолка-Разводка под точечный светильник
+	var price1 = 0;
+	var price2 = 0;
+	var price3 = 0;
+	var price4 = 0;
+	var price5 = 0;
+	var price6 = 0;
+	
+  function getRadioGroupValue(radioGroupObj)
+  {
+  for (var i=0; i < radioGroupObj.length; i++)
+    if (radioGroupObj[i].checked){ v = radioGroupObj[i].value; // цикл ищит включенные элементы а затем присваивает включенный элемент переменной v
+    radio1 =+v;
+	
+	        var count1 = document.getElementById("count1"); //получаем ссылку на элемент input (Кол-во вариантов)
+			var count2 = document.getElementById("count2");
+			var count3 = document.getElementById("count3");
+			var count4 = document.getElementById("count4");
+			var count5 = document.getElementById("count5");
+			var count6 = document.getElementById("count6");
+            var result = document.getElementById("result"); //получаем ссылку на элемент span, в него будем писать стоимость дизайна
+            price1 = parseInt(count1.value);
+            if (price1) +price1; //если переменная price1 есть (ввели значение в поле text), то преобразуем его в числовой вид
+			else price1=0; //если значения нет, то присваиваем нуль
+			price2 = parseInt(count2.value);
+            if (price2) +price2;
+			else price2=0;
+			price3 = parseInt(count3.value);
+            if (price3) +price3;
+			else price3=0;
+			price4 = parseInt(count4.value);
+            if (price4) +price4;
+			else price4=0;
+			price5 = parseInt(count5.value);
+            if (price5) +price5;
+			else price5=0;
+			price6 = parseInt(count6.value);
+            if (price6) +price6;
+			else price6=0;
+			
+	if(price3>=4) { text1=radio1*price1+price2*100+(price3*100 -400)+price4*300+price5*300+price6*100;} //если количество углов больше 4, то отнимаем 400р
+    else text1=radio1*price1+price2*100+price3*100+price4*300+price5*300+price6*100; //если нет, то не отнимаем
+	
+	document.getElementById("result").innerHTML=text1; //пихаем результат в span с id = result
+	}
+  return null;
+  } 
+
+function DelRad1() { //функция снимает галки с стальных radio (первые 5 radio первой формы удаляем т.к. они могут выбираться) 
+//то есть для каждой активной группы, нужно снять галки с предыдущих активных, таким образом при каждом проставлении галки в группе
+//в соседних группах галки убираются
+if(!this.checked)document.getElementById('count12').checked=false; //radio с id=count12 чистим его
+if(!this.checked)document.getElementById('count13').checked=false; 
+if(!this.checked)document.getElementById('count14').checked=false;
+if(!this.checked)document.getElementById('count15').checked=false;
+
+if(!this.checked)document.getElementById('count16').checked=false;
+if(!this.checked)document.getElementById('count17').checked=false;
+
+if(!this.checked)document.getElementById('count18').checked=false;
+if(!this.checked)document.getElementById('count19').checked=false;
+if(!this.checked)document.getElementById('count20').checked=false;
+}
+
+function DelRad2() {
+if(!this.checked)document.getElementById('count7').checked=false; 
+if(!this.checked)document.getElementById('count8').checked=false; 
+if(!this.checked)document.getElementById('count9').checked=false; 
+if(!this.checked)document.getElementById('count10').checked=false;
+if(!this.checked)document.getElementById('count11').checked=false; 
+
+if(!this.checked)document.getElementById('count16').checked=false;
+if(!this.checked)document.getElementById('count17').checked=false;
+
+if(!this.checked)document.getElementById('count18').checked=false;
+if(!this.checked)document.getElementById('count19').checked=false;
+if(!this.checked)document.getElementById('count20').checked=false;
+}
+function DelRad3() {
+if(!this.checked)document.getElementById('count7').checked=false; 
+if(!this.checked)document.getElementById('count8').checked=false; 
+if(!this.checked)document.getElementById('count9').checked=false; 
+if(!this.checked)document.getElementById('count10').checked=false;
+if(!this.checked)document.getElementById('count11').checked=false; 
+
+if(!this.checked)document.getElementById('count12').checked=false; 
+if(!this.checked)document.getElementById('count13').checked=false; 
+if(!this.checked)document.getElementById('count14').checked=false;
+if(!this.checked)document.getElementById('count15').checked=false;
+
+if(!this.checked)document.getElementById('count18').checked=false;
+if(!this.checked)document.getElementById('count19').checked=false;
+if(!this.checked)document.getElementById('count20').checked=false;
+}
+function DelRad4() {
+if(!this.checked)document.getElementById('count7').checked=false; 
+if(!this.checked)document.getElementById('count8').checked=false; 
+if(!this.checked)document.getElementById('count9').checked=false; 
+if(!this.checked)document.getElementById('count10').checked=false;
+if(!this.checked)document.getElementById('count11').checked=false; 
+
+if(!this.checked)document.getElementById('count12').checked=false; 
+if(!this.checked)document.getElementById('count13').checked=false; 
+if(!this.checked)document.getElementById('count14').checked=false;
+if(!this.checked)document.getElementById('count15').checked=false;
+
+if(!this.checked)document.getElementById('count16').checked=false;
+if(!this.checked)document.getElementById('count17').checked=false;
+}
+
+
+
+
+function calc() {
+            var count1 = document.getElementById("count1"); //получаем ссылку на элемент input (Кол-во вариантов)
+			var count2 = document.getElementById("count2");
+			var count3 = document.getElementById("count3");
+			var count4 = document.getElementById("count4");
+			var count5 = document.getElementById("count5");
+			var count6 = document.getElementById("count6");
+            var result = document.getElementById("result"); //получаем ссылку на элемент span, в него будем писать стоимость дизайна
+            price1 = parseInt(count1.value);
+            if (price1) +price1; //если переменная price1 есть (ввели значение в поле text), то преобразуем его в числовой вид
+			else price1=0; //если значения нет, то присваиваем нуль
+			price2 = parseInt(count2.value);
+            if (price2) +price2;
+			else price2=0;
+			price3 = parseInt(count3.value);
+            if (price3) +price3;
+			else price3=0;
+			price4 = parseInt(count4.value);
+            if (price4) +price4;
+			else price4=0;
+			price5 = parseInt(count5.value);
+            if (price5) +price5;
+			else price5=0;
+			price6 = parseInt(count6.value);
+            if (price6) +price6;
+			else price6=0;
+
+			if(price3>=4) { text1=radio1*price1+price2*100+(price3*100 -400)+price4*300+price5*300+price6*100;} //если количество углов больше 4, то отнимаем 400р
+            else text1=radio1*price1+price2*100+price3*0+price4*300+price5*300+price6*100; //если нет, то не отнимаем
+			
+            			
+            result.innerHTML = text1; //выводим результат
+        }
+	
+		
+		
+        </script>
+	
+	
+</head>
+<body>
+    <div id="page" class="clearfix">
+         
+		<div id="top" class="w980">
+		<div id="hr2"><a href="index.htm"><img src="images/logo.jpg" title="Экопрофи -  натяжные потолки"></a></div>
+		<div id="hr1"><img src="images/hr.jpg"></div>
+			        <div id="toptext"><p>Натяжные потолки профи<br />Жалюзи</p></div>
+		<div id="righttext" class="clearfix">
+		<p><span class="righttext1">Саратов </span></p>
+		<div style="clear: both;"></div>
+		<p class="righttext3"><span style="color: #909090;">+7 (8452)</span> 374-244</p>		<div style="clear: both;"></div>
+		
+		<p class="righttext4"><span class="imgspan1"><img src="images/map.jpg"></span><a id="trigg" href="javascript:void(0);">Показать на карте</a></p>
+		<div class="wrapper">
+		<!-- Из obj будет извлечен HTML и помещен в POP-UP -->
+				<div id="obj"><div class="sample">
+				<img src="images/map1.jpg"><br /><br /><small>Просмотреть <a href="https://maps.google.com/maps/ms?ll=39.852994,-86.136932&amp;spn=0.022963,0.037851&amp;t=m&amp;z=15&amp;msa=0&amp;msid=207269902379184547168.0004d6366acf33f516e1f&amp;source=embed" style="color:#0000FF;text-align:left" target="_blank">Большую карту</a>. Точный адрес: ул. М. Горького, 29</small>
+				
+				
+				
+				</div></div>
+			<!-- X Из obj будет извлечен HTML и помещен в POP-UP -->
+		</div><!-- wrapper -->
+
+		
+		</div><!-- righttext -->
+		</div><!-- top --><div id="menu" class="w980">
+		<ul id="topnav"> 
+        <li id="topnav-1"><a href="index.htm" title="">Главная</a></li>
+        <li id="topnav-2"><a href="fotografii.htm" title="">Фотографии</a></li> 
+        <li id="topnav-3"><a href="prajs-list.htm" title="">Прайс-лист</a></li> 
+        <li id="topnav-4"><a href="akcii.htm" title="">Акции</a></li> 
+        <li id="topnav-5"><a href="rasschet-stoimosti-potolka.htm" title="">Калькулятор</a></li> 
+        <li id="topnav-6"><a href="kontakty.htm" title="">Контакты</a></li> 
+        </ul>
+		</div><!-- menu -->
+
+	<!-- ==========  CONTENT  =========== -->
+		<div style="height: 20px;"></div>
+<div id="content">
+  
+  <div id="left">
+    <h1>
+      Рассчет стоимости потолка    </h1>
+    <div class="postcontent">
+      <!-- title and content -->
+      <p>
+	Данный калькулятор рассчитывает ориентировочную стоимость. Для рассчета полной стоимости Вам необходимо <strong>вызвать замерщика на дом</strong>.</p>
+<p>
+	&nbsp;</p>
+<div class="calculator">
+	<div class="cleft">
+		<p>
+			<span style="font-weight: bold;">Площадь потолка:</span></p>
+		<p>
+			<span style="font-weight: bold;">Периметр потолка:</span></p>
+		<p>
+			<span>Количество углов:</span></p>
+		<p>
+			<span>Установка люстры-светильников:</span></p>
+		<p>
+			<span>Количество труб уходящих в потолок:</span></p>
+		<p>
+			<span>Разводка под точечный светильник:</span></p>
+		<div id="mainbody">
+			<p>
+				<span style="font-weight: bold;">Фактура потолка:</span></p>
+		</div>
+		<div class="tabber">
+			<div class="tabbertab">
+				<h2>
+					Лаковая</h2>
+				<div id="mainbody">
+					<form name="radioForm" onclick="getRadioGroupValue(this)">
+						<ul style="list-style: none; margin-left: 0px;">
+							<li>
+								<input class="margin-bottom: 6px;" id="count7" name="group1" onclick="DelRad1()" type="radio" value="550" /><label for="count7"><span>Франция Extenzo - Белая/цветная 1.5м</span></label></li>
+							<li>
+								<input id="count8" name="group1" onclick="DelRad1()" type="radio" value="550" /><span class="margin-top: 6px;"><label for="count8">Polyplast (Бельгия) - Белая/цветная 1.5м</label></span></li>
+							<li>
+								<input id="count9" name="group1" onclick="DelRad1()" type="radio" value="360" /><label for="count9">Lakfolie (pongs германия) Белая/Цветная 1.4м</label></li>
+							<li>
+								<input id="count10" name="group1" onclick="DelRad1()" type="radio" value="300" /><label for="count10">Lakfolie (pongs германия) Белая /Цветная 1.6м</label></li>
+							<li>
+								<input id="count11" name="group1" onclick="DelRad1()" type="radio" value="310" /><label for="count11">Polyplast (Бельгия) Белая/цветная 3.2-3.5м</label></li>
+						</ul>
+					</form>
+				</div>
+				<!-- mainbody --></div>
+			<!-- tabbertab -->
+			<div class="tabbertab">
+				<h2>
+					Матовая</h2>
+				<div id="mainbody">
+					<form name="radioForm" onclick="getRadioGroupValue(this)">
+						<ul style="list-style: none; margin-left: 0px;">
+							<li>
+								<input class="margin-bottom: 6px;" id="count12" name="group1" onclick="DelRad2()" type="radio" value="220" /><label for="count12"><span>Lakfolie (pongs германия) - белая 2.2м</span></label></li>
+							<li>
+								<input id="count13" name="group1" onclick="DelRad2()" type="radio" value="340" /><span class="margin-top: 6px;"><label for="count13">Lakfolie (pongs германия) - цветная 2.2м</label></span></li>
+							<li>
+								<input id="count14" name="group1" onclick="DelRad2()" type="radio" value="300" /><label for="count14">Polyplast (Бельгия) Белая/цветная 3.2-3.5м</label></li>
+							<li>
+								<input id="count15" name="group1" onclick="DelRad2()" type="radio" value="300" /><label for="count15">Polyplast (Бельгия) Белая/цветная 2.7-3.0м</label></li>
+						</ul>
+					</form>
+				</div>
+				<!-- mainbody --></div>
+			<div class="tabbertab">
+				<h2>
+					Безшовные германские</h2>
+				<div id="mainbody">
+					<form name="radioForm" onclick="getRadioGroupValue(this)">
+						<ul style="list-style: none; margin-left: 0px;">
+							<li>
+								<input class="margin-bottom: 6px;" id="count16" name="group1" onclick="DelRad3()" type="radio" value="380" /><label for="count16"><span>Матовые 2.7-3.0м - Белые/цветные</span></label></li>
+							<li>
+								<input id="count17" name="group1" onclick="DelRad3()" type="radio" value="450" /><span class="margin-top: 6px;"><label for="count17">Матовые, сатиновые - 5.0м-5.5м - Белые</label></span></li>
+						</ul>
+					</form>
+				</div>
+				<!-- mainbody --></div>
+			<div class="tabbertab">
+				<h2>
+					Тканевые</h2>
+				<div id="mainbody">
+					<form name="radioForm" onclick="getRadioGroupValue(this)">
+						<ul style="list-style: none; margin-left: 0px;">
+							<li>
+								<input class="margin-bottom: 6px;" id="count18" name="group1" onclick="DelRad4()" type="radio" value="900" /><label for="count18"><span>Cerutti 1.5м-5.0м - белый</span></label></li>
+							<li>
+								<input id="count19" name="group1" onclick="DelRad4()" type="radio" value="500" /><span class="margin-top: 6px;"><label for="count19">Deskor 3.1м, 4.1м, 5.1м</label></span></li>
+							<li>
+								<input id="count20" name="group1" onclick="DelRad4()" type="radio" value="600" /><label for="count20">Clipso 1.5м-5.0м</label></li>
+						</ul>
+					</form>
+				</div>
+				<!-- mainbody --></div>
+		</div>
+		<!-- tabber -->
+		<p>
+			<span style="font-weight: bold;">Стоимость натяжного потолка: <span id="result" style="font-size: 1.1em; color: #ff7200;"> 0</span> руб.</span></p>
+	</div>
+	<!-- cleft -->
+	<div class="rleft">
+		<input id="count1" onchange="calc()" type="text" value="" /><span class="textfont1">кв.м.</span> <input id="count2" onchange="calc()" type="text" value="" /><span class="textfont1">м.</span> <input id="count3" onchange="calc()" type="text" value="" /><span class="textfont1">шт.</span> <input id="count4" onchange="calc()" type="text" value="" /><span class="textfont1">шт.</span> <input id="count5" onchange="calc()" type="text" value="" /><span class="textfont1">шт.</span> <input id="count6" onchange="calc()" type="text" value="" /><span class="textfont1">шт.</span></div>
+	<!-- rleft --></div>
+<!-- calculator -->      
+       <p>	</p>
+       <p>	</p>	
+       <p>	</p>
+       <p>	</p>  
+	   <p>	</p>
+       <p>	</p> 
+           </div>
+           <!-- postcontent -->
+  </div>
+  <!-- left -->
+  <div id="right">
+		
+		<h2>Информация о потолках</h2>
+		<ul>
+		<li><a href="vidy-natyazhnyh-potolkov.htm">Виды натяжных потолков</a><li>
+		<li><a href="natyazhnoj-potolok-iz-pvh.htm">Натяжной потолок из ПВХ</a><li>
+		<li><a href="tekstilnyj-natyazhnoj-potolok.htm">Текстильный натяжной потолок</a><li>
+		<li><a href="montazh-natyazhnyh-potolkov.htm">Технология установки</a><li>
+		<li><a href="kak-zakazat.htm">Как заказать?</a><li>
+		</ul>
+		<h2>Информация о жалюзи</h2>
+		<ul>
+		<li><a href="vertikalnye-zhalyuzi.htm">Вертикальные жалюзи</a><li>
+		<li><a href="gorizontalnye-zhalyuzi.htm">Горизонательные жалюзи</a><li>
+		<li><a href="rulonnye-shtory.htm">Рулонные шторы</a><li>
+		</ul>
+
+		
+		</div><!-- right -->  <div style="clear:both;">
+  </div>
+  
+</div>
+<!-- content -->	
+		
+	</div><!-- id-page -->
+	
+	<!-- ==========  /CONTENT  =========== -->
+	
+	
+<div id="footer">
+	<div id="footerin">
+	
+<span class="spans1"><p><span class="sbold">ECO</span> PROFI</p></span>
+<span class="spanphone">© 2009-2014 «ECO ПРОФИ» <br />Россия, Саратов, ул. Комсомольская, д.12</span>
+
+<span class="phone">+7 (8452) 374-244</span>
+
+	</div><!-- footerin -->
+	
+	
+	</div><!-- footer -->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter20636935 = new Ya.Metrika({id:20636935,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/20636935" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
